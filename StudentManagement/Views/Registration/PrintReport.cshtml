@@ -1,0 +1,93 @@
+﻿@model IEnumerable<StudentManagement.Models.registration>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PrintReport</title>
+</head>
+<body>
+    <center>
+        <img src="~/Image/logo-studentcare.png" style="width: min-content; height: 70px" />
+        <center><h5> Where Success is a Tradition</h5></center>
+    </center>
+    <center><h2>Student Report</h2></center>
+    <table class="table" style="border:1px solid #4f4f4f;" width="100%">
+        <thead style="background-color:#080a45 ;color:white">
+            <tr style="border:solid">
+                <th>First Name</th>
+                <th>
+                    @Html.DisplayNameFor(model => model.lastname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.telno)
+                </th>
+                @* <th>
+                        @Html.DisplayNameFor(model => model.created_by)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.create_time)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.updated_by)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.update_time)
+                    </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.batch.batch1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.course.course1)
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr style="background-color: #ffb3ff">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.firstname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.lastname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.telno)
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.created_by)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.create_time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.updated_by)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.update_time)
+                        </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.batch.batch1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.course.course1)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+
+    </table>
+</body>
+</html>

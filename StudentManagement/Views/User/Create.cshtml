@@ -1,0 +1,86 @@
+﻿@model StudentManagement.Models.user
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@*<h2>Create a New Account</h2>*@
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <head>
+        <style>
+            #border {
+                border: 1px solid black;
+                margin: 5% auto 10% auto;
+                max-width: 720px;
+                min-width: 200px;
+                padding-left: 60px;
+                padding-right: 60px;
+                border-radius: 20px;
+                background-color: rgba(203, 164, 205, 0.71);
+        </style>
+    </head>
+
+    <div class="form-horizontal" id="border">
+        <br />
+        <center>
+            <img src="~/Image/logo-studentcare.png" style="width: min-content; height: 70px" />
+        </center>
+        <h4>Registration</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.firstname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.firstname, new { htmlAttributes = new { PlaceHolder = "Enter First Name Here.", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.firstname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.lastname, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.lastname, new { htmlAttributes = new { PlaceHolder = "Enter Last Name Here.", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.lastname, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.username, new { htmlAttributes = new { PlaceHolder = "Enter User Name Here.", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.password,  htmlAttributes :new { PlaceHolder = "Enter Password Here.", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Register" class="btn btn-info" />
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Back to Login", "Index", "Login")
+           
+        </div>
+        <br />
+    </div>
+    
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
