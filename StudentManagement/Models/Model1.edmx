@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="StudentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="StudentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="batch">
           <Key>
             <PropertyRef Name="id" />
@@ -84,7 +84,8 @@
             <End Role="registration" EntitySet="registration" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StudentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -116,12 +117,12 @@
           <Property Name="course_id" Type="Int32" />
           <Property Name="batch_id" Type="Int32" />
           <Property Name="telno" Type="Int32" />
-          <NavigationProperty Name="batch" Relationship="Self.FK_registration_batch" FromRole="registration" ToRole="batch" />
-          <NavigationProperty Name="course" Relationship="Self.FK_registration_course" FromRole="registration" ToRole="course" />
           <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="create_time" Type="DateTime" Precision="3" />
           <Property Name="updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="update_time" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="batch" Relationship="Self.FK_registration_batch" FromRole="registration" ToRole="batch" />
+          <NavigationProperty Name="course" Relationship="Self.FK_registration_course" FromRole="registration" ToRole="course" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -198,16 +199,16 @@
           <EntitySetMapping Name="registrations">
             <EntityTypeMapping TypeName="StudentModel.registration">
               <MappingFragment StoreEntitySet="registration">
-                <ScalarProperty Name="update_time" ColumnName="update_time" />
-                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
-                <ScalarProperty Name="create_time" ColumnName="create_time" />
-                <ScalarProperty Name="created_by" ColumnName="created_by" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="firstname" ColumnName="firstname" />
                 <ScalarProperty Name="lastname" ColumnName="lastname" />
                 <ScalarProperty Name="course_id" ColumnName="course_id" />
                 <ScalarProperty Name="batch_id" ColumnName="batch_id" />
                 <ScalarProperty Name="telno" ColumnName="telno" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

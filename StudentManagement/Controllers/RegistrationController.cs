@@ -29,8 +29,8 @@ namespace StudentManagement.Controllers
         /// <returns></returns>
         public ActionResult Index()  // string Searchby, string search
         {
-            //if (Session["UserId"] != null)
-            // {
+            if (Session["UserId"] != null)
+             {
             /* var registrations = db.registrations.Include(r => r.batch).Include(r => r.course);
              try
              {
@@ -56,12 +56,12 @@ namespace StudentManagement.Controllers
 
             return View(db.registrations.ToList());
 
-            /* }
+             }
              else
              {
 
                  return RedirectToAction("About", "Home");
-             }*/
+             }
         }
 
         public ActionResult PrintPDF()
@@ -104,7 +104,7 @@ namespace StudentManagement.Controllers
 
         // GET: Registration/Create
         public ActionResult Create()
-        {
+       {
             ViewBag.batch_id = new SelectList(db.batches, "id", "batch1");
             ViewBag.course_id = new SelectList(db.courses, "id", "course1");
             return View();
