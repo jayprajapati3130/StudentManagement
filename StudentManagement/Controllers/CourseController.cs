@@ -43,7 +43,7 @@ namespace StudentManagement.Controllers
             }
         }
 
-        // GET: Course/Details
+        /*// GET: Course/Details
         /// <summary>
         /// this is for get the details about Course
         /// </summary>
@@ -64,7 +64,7 @@ namespace StudentManagement.Controllers
             {
                 return View(new course());
             }
-        }
+        }*/
 
         // GET: Course/Create
         public ActionResult Create()

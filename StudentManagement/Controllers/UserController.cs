@@ -32,7 +32,7 @@ namespace StudentManagement.Controllers
         }
 
         // GET: User
-        public ActionResult Details(int? id)
+        /*public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -44,7 +44,7 @@ namespace StudentManagement.Controllers
                 return HttpNotFound();
             }
             return View(user);
-        }
+        }*/
 
         // GET: User/Create
         public ActionResult Create()

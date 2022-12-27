@@ -33,7 +33,7 @@ namespace StudentManagement.Controllers
             }
         }
 
-        // GET: Batch/Details
+       /* // GET: Batch/Details
         /// <summary>
         /// this is for desplay the Entire Information 
         /// </summary>
@@ -51,7 +51,7 @@ namespace StudentManagement.Controllers
                 return HttpNotFound();
             }
             return View(batch);
-        }
+        }*/
 
         // GET: Batch/Create
         public ActionResult Create()
