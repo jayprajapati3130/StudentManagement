@@ -225,6 +225,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Database Backup\Student.bak" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
